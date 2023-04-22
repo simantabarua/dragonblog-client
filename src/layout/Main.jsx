@@ -15,15 +15,14 @@ const Main = () => {
         <LatestNews />
         <Navbar />
       </header>
-      <main className="flex-grow px-5 lg:px-10 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-12 grid-rows-4">
-        <aside className="md:col-span-2 md:row-span-2">
+      <main className="flex-grow px-5 lg:px-10 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-12 ">
+        <aside className="md:col-span-2 ">
           <LeftNav />
         </aside>
-        <section className="bg-gray-400 md:col-span-8 md:row-span-4 lg:row-span-4">
-          Main Content
+        <section className="bg-gray-50 md:col-span-8 ">
           <Outlet />
         </section>
-        <aside className="md:col-span-2 md:row-span-2 lg:row-span-4">
+        <aside className="md:col-span-2  ">
           <RightNav />
         </aside>
       </main>

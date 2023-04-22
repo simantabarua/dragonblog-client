@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "./../../public/assets/logo.png";
 import moment from "moment";
-import Marquee from "react-fast-marquee";
-import Navbar from "./Navbar";
+
 
 const Header = () => {
   return (

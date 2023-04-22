@@ -3,5 +3,8 @@
 @import 'tailwindcss/utilities';
 
 .active{
-  @apply text-red-500
+  @apply text-blue-500
 }
+
+
+

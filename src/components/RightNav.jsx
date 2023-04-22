@@ -12,17 +12,19 @@ import { Link } from "react-router-dom";
 
 const RightNav = () => {
   return (
-    <div className="font-medium">
+    <div className="font-medium py-5">
       <div>
         <h2>Login With</h2>
-        <button className="btn flex gap-2 w-full btn-ghost ring-2 normal-case my-2">
-          <FaGoogle />
-          Login with google{" "}
-        </button>
-        <button className="btn flex gap-2 w-full btn-ghost ring-2 normal-case my-2">
-          <FaGithub />
-          Login with google{" "}
-        </button>
+        <div>
+          <button className="btn btn-sm flex gap-2 w-full btn-ghost ring-2 normal-case my-2">
+            <FaGoogle />
+            Login with google
+          </button>
+          <button className="btn btn-sm flex gap-2 w-full btn-ghost ring-2 normal-case my-2">
+            <FaGithub />
+            Login with google
+          </button>
+        </div>
       </div>
       <div>
         <h2>Find us on</h2>

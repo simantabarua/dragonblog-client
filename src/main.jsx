@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 
 import Main from "./layout/Main";
 import News from "./layout/News";
+import CategoryNews from "./components/CategoryNews";
+import NewDetailsCard from "./components/NewDetailsCard";
 
 const router = createBrowserRouter([
   {
@@ -18,13 +20,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/category/:id",
-        element: <Home />,
+        element: <CategoryNews />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/categories/${params.id}`),
       },
     ],
   },
   {
     path: "news",
     element: <News />,
+    children: [
+      {
+        path: ":id",
+        element: <NewDetailsCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/news/${params.id}`),
+      },
+    ],
   },
 ]);
 

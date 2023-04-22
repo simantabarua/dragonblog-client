@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
+import EditorsInsides from "../components/EditorsInsides";
 
 const Home = () => {
   return (
-    <div>
+    <>
+      <EditorsInsides />
+    </>
+  );
+};
 
-      
-
-    </div>
-  )
-}
-
-export default Home
+export default Home;
