@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const EditorsInsides = () => {
   const [todaysPick, setTodaysPick] = useState([]);
@@ -39,11 +40,11 @@ const EditorsInsides = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 20,
             },
           }}
@@ -65,16 +66,18 @@ const EditorsInsides = () => {
               index
             ) => (
               <SwiperSlide className="h-full" key={index}>
-                <div className="card w-full bg-slate-200 shadow-xl h-full ">
+                <div className="card w-full bg-slate-200 shadow-xl max-h-full">
                   <figure>
                     <img src={image_url} />
                   </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{title.slice(0, 40)}...</h2>
-                    <p>{author?.published_date}</p>
+                  <div className="p-4 flex flex-col gap-2">
+                    <h2 className="text-xl">{title.slice(0, 40)}...</h2>
+                    <p>
+                      {moment(author?.published_date).format("DD-MMMM-YYYY")}
+                    </p>
 
                     <Link to={`/news/${_id}`}>
-                      <button className="btn btn-primary w-full">
+                      <button className="btn btn-sm  btn-primary w-full">
                         Read more
                       </button>
                     </Link>

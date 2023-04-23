@@ -8,6 +8,9 @@ import Main from "./layout/Main";
 import News from "./layout/News";
 import CategoryNews from "./components/CategoryNews";
 import NewDetailsCard from "./components/NewDetailsCard";
+import AuthProvider from "./context/AuthProvider";
+import Login from "./components/Login";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -38,10 +41,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "login",
+    element: <Login />,
+  },
+  {
+    path: '*',
+    element: <ErrorPage/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

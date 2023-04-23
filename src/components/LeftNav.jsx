@@ -17,11 +17,11 @@ const LeftNav = () => {
   }, []);
 
   return (
-    <div className="p-5 font-normal">
-      <h2 className="text-xl">All Categories</h2>
-      <div>
+    <div className=" font-normal">
+      <h2 className="text-xl my-2">All Categories</h2>
+      <div className="flex md:flex-col gap-2 flex-wrap">
         {categories.map((category, index) => (
-          <p key={index}>
+          <p className="rounded-lg p-1 ring-2 md:ring-0" key={index}>
             <Link to={`/category/${category.id}`}>{category.name}</Link>
           </p>
         ))}

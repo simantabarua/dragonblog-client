@@ -1,21 +1,17 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaUser } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
+import { AuthContext } from "../context/AuthProvider";
+import { links } from "../utils/links";
 
-const Navbar = () => {
+const Navbar = ({ toggleLeftNav }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const links = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Career", path: "/career" },
-    { label: "News", path: "/news" },
-  ];
 
   const menuLinks = links.map(({ label, path }) => (
     <li key={path}>
@@ -35,8 +31,9 @@ const Navbar = () => {
             {isMenuOpen ? <HiOutlineX /> : <FaBars />}
           </label>
           {isMenuOpen && (
-            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
               {menuLinks}
+              <li><button onClick={toggleLeftNav}>All categories </button></li>
             </ul>
           )}
         </div>
@@ -44,9 +41,19 @@ const Navbar = () => {
       <ul className="navbar-center hidden md:flex justify-start md:justify-center gap-5">
         {menuLinks}
       </ul>
+    
+
       <div className="navbar-end flex gap-2 items-center">
-        <FaUser className="bg-slate-400 w-10 h-10 p-2 rounded-full" />
-        <button className="btn btn-primary normal-case">Login</button>
+        <FaUser className="bg-slate-400 w-10 h-10 p-2 sm:rounded-full" />
+        {user ? (
+          <Link>
+            <button className="btn btn-primary normal-case">Logout</button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-primary normal-case">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );

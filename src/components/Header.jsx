@@ -1,9 +1,11 @@
-import React from "react";
-import logo from "./../../public/assets/logo.png";
+import React, { useContext } from "react";
+import logo from "/assets/logo.png";
 import moment from "moment";
 
 
 const Header = () => {
+ 
+
   return (
     <div>
       <div className="text-center p-5">
