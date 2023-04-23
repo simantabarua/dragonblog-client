@@ -30,11 +30,11 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "news",
+    path: "/",
     element: <News />,
     children: [
       {
-        path: ":id",
+        path: "/news/:id",
         element: <NewDetailsCard />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/news/${params.id}`),

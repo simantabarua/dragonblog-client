@@ -15,12 +15,12 @@ const News = () => {
         <Navbar />
       </header>
       <main className="flex-grow px-10 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-12 ">
-        <section className="md:col-span-10 ">
+        <section className="md:col-span-9 ">
           <Outlet />
           <Comment />
           <EditorsInsides/>
         </section>
-        <aside className="md:col-span-2 lg:col-span-2 lg:">
+        <aside className="md:col-span-2 lg:col-span-3 justify-self-center ">
           <RightNav />
         </aside>
       </main>

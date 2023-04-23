@@ -33,7 +33,6 @@ const Navbar = ({ toggleLeftNav }) => {
           {isMenuOpen && (
             <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
               {menuLinks}
-              <li><button onClick={toggleLeftNav}>All categories </button></li>
             </ul>
           )}
         </div>
@@ -41,7 +40,6 @@ const Navbar = ({ toggleLeftNav }) => {
       <ul className="navbar-center hidden md:flex justify-start md:justify-center gap-5">
         {menuLinks}
       </ul>
-    
 
       <div className="navbar-end flex gap-2 items-center">
         <FaUser className="bg-slate-400 w-10 h-10 p-2 sm:rounded-full" />

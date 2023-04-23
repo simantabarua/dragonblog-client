@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState("fuck");
+  const [user, setUser] = useState(null);
 
   const authInfo = { user };
   return (

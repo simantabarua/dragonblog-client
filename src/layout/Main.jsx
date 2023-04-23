@@ -10,21 +10,17 @@ import Navbar from "../components/Navbar";
 const Main = () => {
   const [isLeftNavOpen, setIsLeftNavOpen] = useState(false);
 
-  const toggleLeftNav = () => {
-    setIsLeftNavOpen(!isLeftNavOpen);
-  };
+
   return (
     <div className="min-h-screen flex flex-col p-4">
       <header>
         <Header />
         <LatestNews />
-        <Navbar toggleLeftNav={toggleLeftNav} />
+        <Navbar/>
       </header>
       <main className="flex-grow p-1 md:px-5 lg:px-10 grid gap-4 grid-cols-1 md:grid-cols-12 ">
         <aside
-          className={`md:col-span-3 lg:col-span-2 ${
-            isLeftNavOpen ? "block" : "hidden"
-          } md:block`}
+          className="md:col-span-3 lg:col-span-2"
         >
           <LeftNav />
         </aside>
